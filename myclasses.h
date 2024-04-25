@@ -49,6 +49,7 @@ public:
     const T *data() const;
 
     void resize();
+    void append_column(const std::vector<T> &new_column);
 
 private:
     int _rows;

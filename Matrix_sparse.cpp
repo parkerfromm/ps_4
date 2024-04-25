@@ -297,7 +297,7 @@ Matrix_dense<T> Matrix_sparse<T>::convert_to_dense()
 {
 
     Matrix_dense<T> A(_rows, _cols);
-    A.fill(0);
+    A.fill(T{0});
 
     for (int i = 0; i < _rows; i++)
     {

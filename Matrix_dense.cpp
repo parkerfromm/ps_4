@@ -287,25 +287,25 @@ const T *Matrix_dense<T>::data() const
     return _contiguous_data.data();
 }
 
-template <typename T>
-void Matrix_dense<T>::resize(int new_rows, int new_cols)
-{
+// template <typename T>
+// void Matrix_dense<T>::resize(int new_rows, int new_cols)
+// {
 
-    Matrix_dense<T> new_matrix(new_rows, new_cols) if (new_rows < _matrix._rows && new_cols < _matrix._cols)
-    {
-        for (int i = 0; i < new_rows; i++)
-        {
-            for (int j = 0; j < new_cols; j++)
-            {
-                new_matrix(i, j) = _matrix(i, j)
-            }
-        }
-    }
+//     Matrix_dense<T> new_matrix(new_rows, new_cols) if (new_rows < _matrix._rows && new_cols < _matrix._cols)
+//     {
+//         for (int i = 0; i < new_rows; i++)
+//         {
+//             for (int j = 0; j < new_cols; j++)
+//             {
+//                 new_matrix(i, j) = _matrix(i, j)
+//             }
+//         }
+//     }
 
-    _matrix = new_matrix;
-    _rows = new_rows;
-    _cols = new_cols;
-}
+//     _matrix = new_matrix;
+//     _rows = new_rows;
+//     _cols = new_cols;
+// }
 
 // template <typename T>
 // T *Matrix_dense<T>::data()
@@ -430,5 +430,15 @@ void Matrix_dense<T>::resize(int new_rows, int new_cols)
 //         }
 //     }
 // }
+
+template <typename T>
+void Matrix_dense<T>::append_column(const std::vector<T> &new_column)
+{
+    _cols++;
+    for (int i = 0; i < _rows; i++)
+    {
+        _matrix[i].push_back(new_column[i]);
+    }
+}
 
 template class Matrix_dense<double>;
