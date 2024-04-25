@@ -551,6 +551,10 @@ int main()
     cout << "expected lowest eig =" << expected_lowest_eigenvalue << endl;
 }
 
+// Report
+// compile with g++ -g -o ps4 Matrix_sparse.cpp Matrix_dense.cpp ps4.cpp -llapacke -llapack -lblas
 // the code is not correct. I do not know if I am fillinf in
 // my sparse matrix class correctly
 // i should get a tridiagnol matrix but i am only getting a diagnol one when converting to dense.
+// As for timing sorry I did not set my functions up correctly to take in the sparsity constant.
+//
